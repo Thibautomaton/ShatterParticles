@@ -60,8 +60,9 @@ class ParticleSystem(object):
         print("SHATTER")
         self.breaking=True
         for p in self.particles:
+            p.applyForce(self.gravity)
             p.velocity = PVector(random(-4, 4), random(-2, 8))
-            p.acceleration = PVector(0,0)
+            #p.acceleration = PVector(0,0)
             p.lifespan = 255
         
         
